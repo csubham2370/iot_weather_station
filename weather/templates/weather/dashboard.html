@@ -1,0 +1,201 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1"
+    >
+
+    <title>
+        IoT Weather Station
+    </title>
+
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+</head>
+
+
+<body class="bg-light">
+
+
+<div class="container mt-5">
+
+    <h1 class="text-center mb-4">
+        IoT Weather Station
+    </h1>
+
+
+    <!-- Loading Message -->
+    <div
+        id="loading"
+        class="alert alert-info text-center"
+    >
+        Loading weather data...
+    </div>
+
+
+    <!-- Error Message -->
+    <div
+        id="error"
+        class="alert alert-danger text-center d-none"
+    >
+    </div>
+
+
+    <!-- Weather Card -->
+    <div
+        id="weatherCard"
+        class="card shadow mx-auto d-none"
+        style="max-width: 650px;"
+    >
+
+        <div class="card-body text-center">
+
+            <h3 class="mb-4">
+                Current Weather
+            </h3>
+
+
+            <!-- Location -->
+
+            {% comment %} <h5>
+                📍 Location
+            </h5>
+
+            <p
+                id="location"
+                class="fs-4"
+            >
+                -
+            </p> {% endcomment %}
+
+
+            <hr>
+
+
+            <div class="row">
+
+
+                <!-- Temperature -->
+
+                <div class="col-md-4">
+
+                    <h5>
+                        🌡 Temperature
+                    </h5>
+
+                    <p class="fs-4">
+
+                        <span id="temperature">
+                            -
+                        </span>
+
+                        °C
+
+                    </p>
+
+                </div>
+
+
+                <!-- Humidity -->
+
+                <div class="col-md-4">
+
+                    <h5>
+                        💧 Humidity
+                    </h5>
+
+                    <p class="fs-4">
+
+                        <span id="humidity">
+                            -
+                        </span>
+
+                        %
+
+                    </p>
+
+                </div>
+
+
+                <!-- Pressure -->
+
+                {% comment %} <div class="col-md-4">
+
+                    <h5>
+                        🌬 Pressure
+                    </h5>
+
+                    <p class="fs-4">
+
+                        <span id="pressure">
+                            -
+                        </span>
+
+                        hPa
+
+                    </p>
+
+                </div> {% endcomment %}
+
+
+            </div>
+
+
+            <hr>
+
+
+            <p class="text-muted">
+
+                Device:
+
+                <span id="device">
+                    -
+                </span>
+
+            </p>
+
+
+            <p class="text-muted">
+
+                Last Updated:
+
+                <span id="lastUpdated">
+                    -
+                </span>
+
+            </p>
+
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- jQuery -->
+<script
+    src="https://code.jquery.com/jquery-3.7.1.min.js">
+</script>
+
+
+<!-- Our AJAX JavaScript -->
+<script
+    src="{% static 'weather/js/dashboard.js' %}">
+</script>
+
+
+</body>
+
+</html>
